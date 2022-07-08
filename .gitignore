@@ -1,0 +1,6 @@
+# Ignore
+undodir/*
+**/packer_compiled.lua
+
+# Keep
+!undodir/.gitkeep
