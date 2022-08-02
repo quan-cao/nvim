@@ -51,6 +51,14 @@ return packer.startup(function(use)
     config = [[ require "plugins.nvim-tree" ]]
   }
 
+  -- Gitsigns - Show git diff
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
   -- Lualine
   use {
     "nvim-lualine/lualine.nvim",
