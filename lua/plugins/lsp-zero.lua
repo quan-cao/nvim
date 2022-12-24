@@ -9,3 +9,7 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping.scroll_docs(4)
   })
 }
+
+-- format on save
+vim.cmd [[autocmd BufWritePre * lua require("vim.lsp.buf").format()]]
+
