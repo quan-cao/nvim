@@ -30,7 +30,9 @@ opt.linebreak = true            -- Wrap on word boundary
 opt.termguicolors = true        -- Enable 24-bit RGB colors
 opt.laststatus = 3              -- Set global statusline
 opt.scrolloff = 5               -- Virtual margin
-opt.guicursor = "n-v-c-i:block" -- Show block cursor in normal-visual-commandline-insert
+
+-- Show block as cursor all the time
+opt.guicursor = "a:block,i-ci-r-cr:blinkon100-blinkoff100"
 
 -----------------------------------------------------------
 -- Tabs, indent
