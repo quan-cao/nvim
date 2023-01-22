@@ -1,5 +1,19 @@
 local lsp = require("lsp-zero")
 lsp.preset("recommended")
+
+-- pylsp global configs
+lsp.configure("pylsp", {
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          maxLineLength = 120
+        }
+      }
+    }
+  }
+})
+
 lsp.setup()
 
 vim.opt.signcolumn = "yes" -- Reserve space for diagnostic icons
@@ -13,6 +27,7 @@ vim.diagnostic.config({
   float = true,
 })
 
+-- mappings
 local cmp = require "cmp"
 cmp.setup {
   mapping = cmp.mapping.preset.insert({
@@ -23,4 +38,3 @@ cmp.setup {
 
 -- format on save
 vim.cmd [[autocmd BufWritePre * lua require("vim.lsp.buf").format()]]
-
