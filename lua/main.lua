@@ -97,6 +97,13 @@ return packer.startup(function(use)
     config = [[ require "plugins.lsp-zero" ]]
   }
 
+  -- Telescope - File Finder
+  use {
+    "nvim-telescope/telescope.nvim", tag = "0.1.1",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = [[ require "plugins.telescope" ]]
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
