@@ -1,19 +1,5 @@
 local lsp = require("lsp-zero")
 lsp.preset("recommended")
-
--- pylsp global configs
-lsp.configure("pylsp", {
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          maxLineLength = 120
-        }
-      }
-    }
-  }
-})
-
 lsp.setup()
 
 vim.opt.signcolumn = "yes" -- Reserve space for diagnostic icons
@@ -31,6 +17,7 @@ vim.diagnostic.config({
 local cmp = require "cmp"
 cmp.setup {
   mapping = cmp.mapping.preset.insert({
+    ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4)
   })

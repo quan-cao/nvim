@@ -94,7 +94,10 @@ return packer.startup(function(use)
       {"L3MON4D3/LuaSnip"},
       {"rafamadriz/friendly-snippets"},
     },
-    config = [[ require "plugins.lsp-zero" ]]
+    config = function()
+      require "plugins.lsp.lsp-zero"
+      require "plugins.lsp.python"
+    end
   }
 
   -- Telescope - File Finder
