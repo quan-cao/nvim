@@ -24,9 +24,14 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Colorscheme
+--  use {
+--    "EdenEast/nightfox.nvim",
+--    config = [[ require "plugins.nightfox" ]]
+--  }
+
   use {
-    "EdenEast/nightfox.nvim",
-    config = [[ require "plugins.nightfox" ]]
+    "olimorris/onedarkpro.nvim",
+    config = [[ require "plugins.onedark" ]]
   }
 
   -- Autopairs - Auto add closed parenthesis
@@ -106,6 +111,9 @@ return packer.startup(function(use)
     requires = { "nvim-lua/plenary.nvim" },
     config = [[ require "plugins.telescope" ]]
   }
+
+  -- IndentBlankLine
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
