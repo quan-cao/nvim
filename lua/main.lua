@@ -56,6 +56,9 @@ return packer.startup(function(use)
     config = [[ require "plugins.nvim-tree" ]]
   }
 
+  -- Lazygit
+  use "kdheepak/lazygit.nvim"
+
   -- Gitsigns - Show git diff
   use {
     "lewis6991/gitsigns.nvim",
@@ -81,27 +84,20 @@ return packer.startup(function(use)
 
   -- LSP
   use {
-    "VonHeikemen/lsp-zero.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
     requires = {
-      -- LSP Support
-      {"neovim/nvim-lspconfig"},
-      {"williamboman/nvim-lsp-installer"},
-
-      -- Autocompletion
-      {"hrsh7th/nvim-cmp"},
-      {"hrsh7th/cmp-buffer"},
-      {"hrsh7th/cmp-path"},
-      {"saadparwaiz1/cmp_luasnip"},
-      {"hrsh7th/cmp-nvim-lsp"},
-      {"hrsh7th/cmp-nvim-lua"},
-
-      -- Snippets
-      {"L3MON4D3/LuaSnip"},
-      {"rafamadriz/friendly-snippets"},
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip"
     },
     config = function()
-      require "plugins.lsp.lsp-zero"
-      require "plugins.lsp.python"
+      require "plugins.lsp"
+      require "plugins.null-ls"
     end
   }
 
