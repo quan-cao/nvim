@@ -18,18 +18,18 @@ opt.undodir = vim.fn.stdpath("config") .. "/undodir"
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-opt.number = true               -- Show line number
-opt.showmatch = true            -- Highlight matching parenthesis
-opt.foldmethod = "marker"       -- Enable folding (default 'foldmarker')
-opt.colorcolumn = "120"         -- Line lenght marker at 120 columns
-opt.splitright = true           -- Vertical split to the right
-opt.splitbelow = true           -- Horizontal split to the bottom
-opt.ignorecase = true           -- Ignore case letters when search
-opt.smartcase = true            -- Ignore lowercase for the whole pattern
-opt.linebreak = true            -- Wrap on word boundary
-opt.termguicolors = true        -- Enable 24-bit RGB colors
-opt.laststatus = 3              -- Set global statusline
-opt.scrolloff = 5               -- Virtual margin
+opt.number = true         -- Show line number
+opt.showmatch = true      -- Highlight matching parenthesis
+opt.foldmethod = "marker" -- Enable folding (default 'foldmarker')
+opt.colorcolumn = "80"    -- Line lenght marker at 80 columns
+opt.splitright = true     -- Vertical split to the right
+opt.splitbelow = true     -- Horizontal split to the bottom
+opt.ignorecase = true     -- Ignore case letters when search
+opt.smartcase = true      -- Ignore lowercase for the whole pattern
+opt.linebreak = true      -- Wrap on word boundary
+opt.termguicolors = true  -- Enable 24-bit RGB colors
+opt.laststatus = 3        -- Set global statusline
+opt.scrolloff = 5         -- Virtual margin
 
 -- Show block as cursor all the time
 opt.guicursor = "a:block,i-ci-r-cr:blinkon100-blinkoff100"
