@@ -1,8 +1,24 @@
 -----------------------------------------------------------
+-- Mason
+-----------------------------------------------------------
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+local lspconfig = require("lspconfig")
+local lsp_defaults = lspconfig.util.default_config
+
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+  "force",
+  lsp_defaults.capabilities,
+  require("cmp_nvim_lsp").default_capabilities()
+)
+
+-----------------------------------------------------------
 -- LSP Completion
 -----------------------------------------------------------
 
-local cmp = require'cmp'
+local cmp = require"cmp"
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -63,6 +79,12 @@ cmp.setup({
     { name = "buffer" },
   })
 })
+
+-----------------------------------------------------------
+-- Gopls
+-----------------------------------------------------------
+
+require("lspconfig").gopls.setup{}
 
 -----------------------------------------------------------
 -- Pyright

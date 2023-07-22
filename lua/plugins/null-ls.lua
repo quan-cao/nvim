@@ -3,12 +3,16 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
     sources = {
-        -- formatting
+        -- python
         null_ls.builtins.formatting.ruff,
         null_ls.builtins.formatting.black,
-
-        -- diagnostics
+        null_ls.builtins.formatting.isort,
         null_ls.builtins.diagnostics.ruff,
+
+        -- go
+        null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.gofmt,
+        null_ls.builtins.diagnostics.golangci_lint,
 
     },
      on_attach = function(client, bufnr)

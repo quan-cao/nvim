@@ -24,14 +24,14 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Colorscheme
---  use {
---    "EdenEast/nightfox.nvim",
---    config = [[ require "plugins.nightfox" ]]
---  }
-
   use {
-    "olimorris/onedarkpro.nvim",
-    config = [[ require "plugins.onedark" ]]
+    "catppuccin/nvim",
+    as = "catppuccin",
+    requires = {
+      "olimorris/onedarkpro.nvim",
+      "EdenEast/nightfox.nvim",
+    },
+    config = [[ require "plugins.colorscheme" ]]
   }
 
   -- Autopairs - Auto add closed parenthesis
@@ -84,21 +84,37 @@ return packer.startup(function(use)
 
   -- LSP
   use {
-    "jose-elias-alvarez/null-ls.nvim",
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate",
     requires = {
+      "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
+      "jose-elias-alvarez/null-ls.nvim",
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
+    end
+}
+
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = [[ require "plugins.null-ls" ]]
+  }
+
+  use {
+    "neovim/nvim-lspconfig",
+    requires = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip"
     },
-    config = function()
-      require "plugins.lsp"
-      require "plugins.null-ls"
-    end
+    config = function() require("plugins.lsp") end
   }
 
   -- Telescope - File Finder
