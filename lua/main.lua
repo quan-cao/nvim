@@ -97,7 +97,7 @@ return packer.startup(function(use)
       require("mason").setup()
       require("mason-lspconfig").setup()
     end
-}
+  }
 
   use {
     "jose-elias-alvarez/null-ls.nvim",
@@ -113,6 +113,8 @@ return packer.startup(function(use)
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function() require("plugins.lsp") end
   }
