@@ -1,8 +1,8 @@
-require"nvim-treesitter.configs".setup {
-  ensure_installed = { "python", "lua", "vim", "go"},
-  ignore_install = {}, -- List of parsers to ignore installing
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = {}, -- list of language that will be disabled
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "go",
+    },
   },
 }

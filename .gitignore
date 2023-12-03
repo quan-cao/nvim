@@ -1,6 +1,8 @@
-# Ignore
-undodir/*
-**/packer_compiled.lua
-
-# Keep
-!undodir/.gitkeep
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
