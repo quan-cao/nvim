@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "go",
+      "python",
       "hcl",
       "terraform",
     },
